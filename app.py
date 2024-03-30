@@ -4,7 +4,7 @@ import numpy as np
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import pandas as pd
-# nltk.download('vader_lexicon')
+nltk.download('vader_lexicon')
 
 text = st.text_area(label="Drop your text here...")
 
