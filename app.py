@@ -6,7 +6,10 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import pandas as pd
 nltk.download('vader_lexicon')
 
-text = st.text_area(label="Drop your text here...")
+st.title("Get a sentiment analysis")
+st.write("Size of the text does not matter.")
+
+text = st.text_area(label="...", placeholder="Drop your text here...")
 
 st.divider()
 
@@ -29,23 +32,6 @@ def get_sentiment(txt):
 sentiment = get_sentiment(text)
 
 st.divider()
-
-# def dataframe(sentiment):
-#     sentiment_scores = []
-#     for values in sentiment.values():
-#         sentiment_scores.append(values)
-#     array = np.array(sentiment_scores)
-#     return pd.DataFrame({"Negative": sentiment['neg'],
-#                          "Neutral": sentiment['neu'],
-#                          "Positive": sentiment['pos'],
-#                          "Compound": sentiment['compound']}, index=[0])
-
-
-
-
-# data = dataframe(sentiment)
-# st.write(data.head())
-# st.bar_chart(data)c
 
 st.bar_chart(sentiment)
 
